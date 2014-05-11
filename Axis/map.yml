@@ -1,0 +1,304 @@
+info:
+  title: Axis
+  world: Axis
+  version: '0.5 [D]'
+  type: dtm
+  creators:
+  - funkystudios
+  - ParaSpider
+  spawn: -9.02,79.133,-86.283,19.4474,-5.5
+  time: 13760
+
+remove-drops:
+- leather helmet
+- leather chestplate
+- leather leggings
+- leather boots
+- iron ingot
+- bow
+- stone sword
+
+loadout:
+  effects:
+  - night vision:1
+  boots:
+    item: leather_boots
+  chestplate:
+    item: leather_chestplate
+  leggings:
+    item: leather_leggings
+  helmet:  
+    item: leather_helmet
+  7:
+    item: iron ingot
+
+teams:
+  red:
+    spawn: -27.5,71,-94.5,0,0
+    title: Red Team
+    max: 16
+    monuments:
+      0:
+        name: Core
+        location: -28,67,43
+  cyan:
+    spawn: -27.5,71,109.5,180,0
+    title: Cyan Team
+    max: 16
+    monuments:
+      0:
+        name: Core
+        location: -28,67,-29
+
+regions:
+
+  everywhere:
+    type: global
+    flags:
+      build:
+        who: '*'
+      fall_damage:
+        who: '*'
+      kill_player:
+        who: '*'
+        triggers:
+          give_loadout:
+            loadout:
+              0:
+                item: iron_ingot
+
+  jump-1-red:
+    type: point
+    point: -18,65,-56
+    flags:
+      enter:
+        who: '*'
+        triggers:
+          push:
+            velocity: 3.5
+            vertical: 1.9
+
+  jump-2-red:
+    type: point
+    point: -38,65,-56
+    flags:
+      enter:
+        who: '*'
+        triggers:
+          push:
+            velocity: 3.5
+            vertical: 1.9
+
+  red-protect:
+    type: cuboid
+    min: -24,66,-97
+    max: -32,74,-89
+    flags:
+      build:
+        who: '*'
+        priority: 10
+        message: '&cSelect a class to get to the battle!'
+
+  snipe-red:
+    type: point
+    point: -25,72,-93
+    flags:
+      interact:
+        who: '*'
+        message: '&7You have selected &a&oSnipe&7!'
+        triggers:
+          teleport:
+            to: -7.5,65,-71.5,0,0
+          give_loadout:
+            loadout:
+              0:
+                item: bow
+                enchants:
+                - arrow knockback:1
+              1:
+                item: wood sword
+              2:
+                item: diamond pickaxe
+                enchants:
+                - dig speed:1
+              3:
+                item: apple
+                amount: 3
+              4:
+                item: arrow
+                amount: 16
+  dash-red:
+    type: point
+    point: -28,72,-90
+    flags:
+      interact:
+        who: '*'
+        message: '&7You have selected &b&oDash&7!'
+        triggers:
+          teleport:
+            to: -27.5,65,-71.5,0,0
+          give_loadout:
+            loadout:
+              effects:
+              - 'SPEED:1'
+              0:
+                item: stone sword
+              1:
+                item: diamond pickaxe
+                enchants:
+                - dig speed:1
+              2:
+                item: apple
+                amount: 3
+  combat-red:
+    type: point
+    point: -31,72,-93
+    flags:
+      interact:
+        who: '*'
+        message: '&7You have selected &c&oCombat&7!'
+        triggers:
+          teleport:
+            to: -47.5,65,-71.5,0,0
+          give_loadout:
+            loadout:
+              0:
+                item: stone sword
+                enchants:
+                - knockback:1
+              1:
+                item: diamond pickaxe
+                enchants:
+                - dig speed:1
+              2:
+                item: apple
+                amount: 3
+
+  jump-main-red:
+    type: point
+    point: -28,65,-13
+    flags:
+      enter:
+        who: '*'
+        triggers:
+          push:
+            velocity: 7.5
+            vertical: 2.3
+
+  jump-main-cyan:
+    type: point
+    point: -28,65,27
+    flags:
+      enter:
+        who: '*'
+        triggers:
+          push:
+            velocity: 7.5
+            vertical: 2.3
+
+  jump-1-cyan:
+    type: point
+    point: -38,65,70
+    flags:
+      enter:
+        who: '*'
+        triggers:
+          push:
+            velocity: 3.5
+            vertical: 1.9
+
+  jump-2-cyan:
+    type: point
+    point: -18,65,70
+    flags:
+      enter:
+        who: '*'
+        triggers:
+          push:
+            velocity: 3.5
+            vertical: 1.9
+
+  cyan-protect:
+    type: cuboid
+    min: -24,66,103
+    max: -32,74,111
+    flags:
+      build:
+        who: '*'
+        priority: 10
+        message: '&cSelect a class to get to the battle!'
+
+  snipe-cyan:
+    type: point
+    point: -31,72,107
+    flags:
+      interact:
+        who: '*'
+        message: '&7You have selected &a&oSnipe&7!'
+        triggers:
+          teleport:
+            to: -47.5,65,86.5,-180,0
+          give_loadout:
+            loadout:
+              0:
+                item: bow
+                enchants:
+                - arrow knockback:1
+              1:
+                item: wood sword
+              2:
+                item: diamond pickaxe
+                enchants:
+                - dig speed:1
+              3:
+                item: apple
+                amount: 3
+              4:
+                item: arrow
+                amount: 16
+  dash-cyan:
+    type: point
+    point: -28,72,104
+    flags:
+      interact:
+        who: '*'
+        message: '&7You have selected &b&oDash&7!'
+        triggers:
+          teleport:
+            to: -27.5,65,86.5,-180,0
+          give_loadout:
+            loadout:
+              effects:
+              - 'SPEED:1'
+              0:
+                item: stone sword
+              1:
+                item: diamond pickaxe
+                enchants:
+                - dig speed:1
+              2:
+                item: apple
+                amount: 3
+  combat-cyan:
+    type: point
+    point: -25,72,107
+    flags:
+      interact:
+        who: '*'
+        message: '&7You have selected &c&oCombat&7!'
+        triggers:
+          teleport:
+            to: -7.5,65,86.5,180,0
+          give_loadout:
+            loadout:
+              0:
+                item: stone sword
+                enchants:
+                - knockback:1
+              1:
+                item: diamond pickaxe
+                enchants:
+                - dig speed:1
+              2:
+                item: apple
+                amount: 3
