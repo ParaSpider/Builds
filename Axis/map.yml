@@ -4,9 +4,9 @@ info:
   version: '0.5 [D]'
   type: dtm
   creators:
-  - funkystudios
+  - IvyCode
   - ParaSpider
-  spawn: -9.02,79.133,-86.283,19.4474,-5.5
+  spawn: -9,79,-86.2,19.4,-5.5
   time: 13760
 
 remove-drops:
