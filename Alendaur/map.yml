@@ -1,8 +1,103 @@
 info:
   title: Alendaur
   world: Alendaur
-  version: '0.2 [D]'
+  version: '0.3 [D]'
   type: tdm
   creators:
-  - funkystudios
+  - KyloCode
+  contributors:
+  - Madness64
+  - resepignev
   spawn: -17.5,132,-812.5,-90,0
+  radius: 5
+  time-lock: true
+
+  duration: 10m
+  max: 100
+
+  regions:
+  red-spawn:
+    type: cylinder
+    center: 20,75,-734
+    radius: 5
+    height: 10
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not edit red team''s spawn!'
+      damage:
+        who: 'red'
+      enter:
+        who: 'blue'
+        message: '&cYou may not enter red team''s spawn!'
+  blue-spawn:
+    type: cylinder
+    center: 80,75,-893
+    radius: 5
+    height: 10
+    flags:
+      build:
+        who: '*'
+        message: '&cYou may not edit blue team''s spawn!'
+      damage:
+        who: 'blue'
+      enter:
+        who: 'red'
+        message: '&cYou may not enter blue team''s spawn!'
+
+repair-drops:
+- iron sword
+- bow
+- iron pickaxe
+
+remove-drops:
+- leather helmet
+- leather chestplate
+- iron leggings
+- leather boots
+- wood
+- glass
+
+loadout:
+  helmet:
+    item: leather helmet
+  chestplate:
+    item: leather chestplate
+  leggings:
+    item: iron leggings
+  boots:
+    item: leather boots
+  0:
+    item: iron_sword
+  1:
+    item: bow
+  2:
+    item: iron pickaxe
+    enchants:
+    - dig speed:1
+  3:
+    title: '&eGolden Apple'
+    item: golden_apple
+    amount: 2
+  4:
+    item: wood
+    amount: 16
+  5:
+    item: glass
+    amount: 32
+  6:
+    item: bread
+    amount: 16
+  28:
+    item: arrow
+    amount: 16
+
+teams:
+  red:
+    spawn: 20.5,76,-733.5,180,0
+    title: Red Team
+    max: 15
+  blue:
+    spawn: 80.5,76,-892.5,0,0
+    title: Blue Team
+    max: 15
